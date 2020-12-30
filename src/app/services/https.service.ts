@@ -12,7 +12,6 @@ export class HttpsService {
   ) { }
 
   get(endPoint: string, query: any, headers: any) {
-    debugger
     const options: any = {}
     if (headers) {
       options['headers'] = headers;
@@ -26,5 +25,30 @@ export class HttpsService {
       queryParams = `?${aaQueryParams.join('&')}`
     }
     return this.httpClient.get(`${environment.apiUrl}${endPoint}${queryParams}`, options);
+  }
+
+  post(endPoint: string, body: any, headers: any) {
+    const options: any = {};
+    if (headers) {
+      options['headers'] = headers;
+    }
+    return this.httpClient.post(endPoint, body, options);
+  }
+
+  put(endPoint: string, body: any, headers: any) {
+    const options: any = {};
+    if (headers) {
+      options['headers'] = headers;
+    }
+    return this.httpClient.put(endPoint, body, options);
+  }
+
+  // extra.com/posts/{id}
+  delete(endPoint: string, headers: any) {
+    const options: any = {};
+    if (headers) {
+      options['headers'] = headers;
+    }
+    return this.httpClient.delete(endPoint, options);
   }
 }

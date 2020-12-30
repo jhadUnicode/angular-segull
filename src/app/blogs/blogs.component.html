@@ -1,6 +1,8 @@
 <section class="container">
     <button (click)="goToHidden()" mat-raised-button color="primary">Go to hidden posts</button>
     <button (click)="switchForm()" mat-raised-button color="primary" *ngIf="!showForm">Add new post</button>
+    <button (click)="switchAutoReload()" mat-raised-button color="primary">{{(autoReload)?'Disable':'Enable'}} Auto
+        Reload</button>
     <button (click)="reset()" mat-raised-button color="primary" *ngIf="showForm">Cancel</button>
     <div *ngIf="showForm">
         <form [formGroup]="blogPostFormGroup" (ngSubmit)="saveThePost()">

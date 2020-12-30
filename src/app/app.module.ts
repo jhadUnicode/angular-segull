@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HiddenPostsComponent } from './hidden-posts/hidden-posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { NgxSpinnerModule } from "ngx-spinner";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
